@@ -29,3 +29,4 @@ We will be adding the “Add to Cart” feature to our application, which will a
 3. As a user, I want to change the quantity of items I intend to purchase in my shopping cart
 
 4. As a user, I want to be able to remove an item from my shopping cart
+# virtual_store_wk8
