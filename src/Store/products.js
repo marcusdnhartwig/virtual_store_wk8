@@ -24,21 +24,71 @@ const initialState = {
   ],
 }
 
-//REVIEW
 function productReducer(state = initialState, action) {
-
   let { type, payload } = action;
+
+  console.log('payload: ', payload);
+  console.log('state: ', state);
+
   switch (type) {
+
+    case 'ADD_TO_CART':
+      return state.map(product => {
+        if (product.name === payload.name) {
+          product.inventory = product.inventory - 1;
+          product.inCart = product.inCart + 1;
+        }
+        console.log('product: ', product);
+        return product;
+      });
+
     default:
-      return state
+      return state;
+
   }
 }
 
-export const activeProducts = (products) => {
+export const changeCategory = (category) => {
+
   return {
-    type: 'CATEGORY PRODUCTS',
-    payload: products,
-  }
-}
+    type: 'CHANGE',
+    payload: category,
+  };
+};
+
+export const addToCart = (product) => {
+
+  console.log('add to cart product', product);
+
+  return {
+    type: 'ADD_TO_CART',
+    payload: product,
+  };
+};
+
+// add function here to return "ITEM_ADDED" action, to be sure state is updated before being updated by cartReducer?
 
 export default productReducer;
+
+
+//REVIEW
+// export default function productsReducer(state = initialState, action) {
+//   switch (action.type) {
+//     case 'ADD_TO_CART':
+//       return state.map(product => {
+//         if(product.name === action.payload.name){
+//           product.inventory = product.inventory - 1;
+//         }
+//         return product
+//       });
+//     case 'REMOVE_FROM_CART':
+//       return state.map(product => {
+//         if(product.name === action.payload.name){
+//           product.inventory = product.inventory + 1;
+//         }
+//         return product
+//       });
+//     default:
+//       return state;
+//   }
+// }
