@@ -1,3 +1,4 @@
+
 export const selectedCategory = (categories) => {
   return {
     type: 'ACTIVE_CATEGORY',
@@ -6,7 +7,6 @@ export const selectedCategory = (categories) => {
 }
 
 export const addToCart = (products) => {
-  // console.log('product added to cart', products);
   return {
     type: 'ADD_CART',
     payload: products,

@@ -10,7 +10,7 @@ export default function activeCategoryReducer(state = initialState, action) {
         ...state,
         activeCategory: payload
       }
-
+      
     default:
       return state
   }
