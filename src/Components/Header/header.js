@@ -8,7 +8,7 @@ const Header = (props) => {
 
   return (
     <div className='header'>
-      <h1>Electronics Store</h1>
+      <h1>Marcus' Virtual Gear Shopee</h1>
       <Link 
         default to="/" 
         style={{ margin: '25px' }}
